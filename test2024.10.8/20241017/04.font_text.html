@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.設定google 字型 -->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Sixtyfour+Convergence&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            /* 對整份文件做字型的設定 */
+            font-family: "sixtyfour-convergence", sans-serif;
+        }
+
+        /* 對局部文字做設定 */
+        .font-style {
+            /* 單位可以是 px、rem、em... */
+            font-size: 30px;
+            /* 設定斜體 */
+            font-style: italic;
+            /* 設定租體 100~999、bold、bolder */
+            font-weight: bolder;
+
+            /* 字型家族 */
+            /* 如果使用者的系統有第一個字型就使用 微軟正黑體，沒有就用第二個 Verdana */
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /*2.設定 google 字型的 font-family */
+        .google-font {
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 30px;
+            font-style: italic;
+        }
+
+        .text-style {
+            font-size: 30px;
+            /* 文字對齊 */
+            text-align: left;
+            /* underline */
+            text-decoration: underline;
+            /* 第一行文字的縮排 */
+            text-indent: 100px;
+            /* 英文字母或中文字的間隔 */
+            letter-spacing: 10px;
+            /* 單字之間的間隔，中文字比較難用到這個屬性(字與字沒有空格) */
+            word-spacing: 50px;
+            /* 行高，可以設定單位值 */
+            line-height: 50px;
+            /* 也可以設定倍數(無單位) */
+            line-height: 2;
+        }
+
+        .text-shadow {
+            font-size: 100px;
+            /* 水平位移(+為右，-為左)、垂直位移(+為下，-為上)、模糊半徑 顏色 */
+            text-shadow: -50px -40px 15px rgba(220, 90, -110, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+10進位 0~9
+32 2*1(個位數) + 10*3(十位數)=32
+
+16進位 0~9 A(10)、B(11)、C(12)、D(13)、E(14)、F(15)
+1A => 10*1(個位數) + 16 * 1 = 26
+FF => 255 => 15*15 + 15*16 = 255
+
+-->
+    <h1>1.Font 樣式設定</h1>
+    <div class="font-style">
+        星期四
+        Lorem ipsm dolor sit amet comsectetur adipisicing elit.Sape quas consequuntur id consequatur incidunt.
+        Consequuntur cupiditate sequi non voluptas nihil quis eum earum tempora, deserunt,expedita corporis alias iusto
+        optio!
+    </div>
+
+    <h2>2.Google Font</h2>
+    <div class="google-font">Lorem ipsm dolor sit amet comsectetur adipisicing elit.Sape quas consequuntur id
+        consequatur incidunt.
+        Consequuntur cupiditate sequi non voluptas nihil quis eum earum tempora, deserunt,expedita corporis alias iusto
+        optio!</div>
+
+    <h2>3.text 樣式設定</h2>
+    <p class="text-style">Lorem ipsm dolor sit amet comsectetur adipisicing elit.Sape quas consequuntur id consequatur
+        incidunt.
+        Consequuntur cupiditate sequi non voluptas nihil quis eum earum tempora, deserunt,expedita corporis alias iusto
+        optio!</p>
+
+    <h2>4.文字陰影</h2>
+    <p class="text-shadow">PHP is the best!</p>
+
+
+
+
+</body>
+
+</html>
