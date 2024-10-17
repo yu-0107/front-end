@@ -12,6 +12,10 @@
         href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Sixtyfour+Convergence&display=swap"
         rel="stylesheet">
     <style>
+        :root {
+            font-size: 16px;
+        }
+
         body {
             /* 對整份文件做字型的設定 */
             font-family: "sixtyfour-convergence", sans-serif;
@@ -59,8 +63,15 @@
         .text-shadow {
             font-size: 100px;
             /* 水平位移(+為右，-為左)、垂直位移(+為下，-為上)、模糊半徑 顏色 */
-            text-shadow: -50px -40px 15px rgba(220, 90, -110, 0.5);
+            /*text-shadow:-50px -40px 15px rgba(220, 90, 110, 0.5);*/
+
+            /* 多重陰影，組跟組織間用逗點隔開*/
+            text-shadow:
+                10px -70px 10px rgba(220, 90, 110, 0.5),
+                10px 70px 10px rgba(220, 90, 110, 0.5);
         }
+
+        /* CSS generator 產生器，可以先在產生器知道外觀長甚麼樣自，看了舒服就複製貼上 */
     </style>
 </head>
 
@@ -98,8 +109,28 @@ FF => 255 => 15*15 + 15*16 = 255
     <p class="text-shadow">PHP is the best!</p>
 
 
+    <h2>5.rem 與 em 差異</h2>
+    <h3>rem</h3>
+    <p>為 root 預設 font-size 的倍數，預設為 16px</p>
+    <p>:root 選擇器，指的是根元素 html</p>
+    <div style="font-size:1rem;">
+        font
+        <div style="font-size:2rem;">
+            font
+            <div style="font-size:3rem;">font</div>
+        </div>
+    </div>
 
-
+    <h3>em</h3>
+    <p>可能為父層或祖先層 font-size 倍數。</p>
+    <p>父層若有設定文字尺厝以它為準，沒有繼續往外找。</p>
+    <div style="font-size:1em;">
+        font
+        <div style="font-size:2em;">
+            font
+            <div style="font-size:3em;">font</div>
+        </div>
+    </div>
 </body>
 
 </html>
