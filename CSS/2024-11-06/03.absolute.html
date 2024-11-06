@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         .fixed-box {
             position: fixed;
             right: 0%;
@@ -27,7 +31,9 @@
             width: 150px;
             height: 150px;
             background-color: lightpink;
+        }
 
+        .my-text {
             font-size: 30px;
             text-align: center;
             padding: 10px;
@@ -65,12 +71,18 @@
 <body>
     <div class="fixed-box">
         <div class="green-box">
-            <div class="pink-box">
-
+            <div class="pink-box my-text">
+                - -
             </div>
-            <div class="y-box"></div>
-            <div class="z-box"></div>
-            <div class="x-box"></div>
+            <div class="y-box my-text">
+                -_-
+            </div>
+            <div class="z-box my-text">
+                = =
+            </div>
+            <div class="x-box my-text">
+                =_=
+            </div>
         </div>
     </div>
 
