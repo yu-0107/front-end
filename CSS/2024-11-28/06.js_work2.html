@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 90%;
+            height: 90vh;
+            background-color: lightblue;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .item {
+            width: 25%;
+            height: 70%;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            border-radius: 20px;
+        }
+        .text-red {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <h3>四季春珍波椰<br>原價:60元</h3>
+            <img src="https://bigbro.tw/wp-content/uploads/2021/05/20210513185042_55.jpeg" width="300px" height="300px" srcset="">
+            <p></p>
+            <p id="price1">
+                60
+            </p>
+            <button type="button" class="btn" data-price="50" data-id="1">
+                優惠價格
+            </button>
+        </div>
+        <div class="item">
+            <h3>波霸奶茶<br>原價:60元</h3>
+            <img src="https://blog-cdn.roo.cash/blog/wp-content/uploads/2024/06/%E6%B3%A2%E9%9C%B8%E5%A5%B6%E8%8C%B6.jpg" width="300px" height="300px" srcset="">
+            <p></p>
+            <p id="price2">
+                60
+            </p>
+            <button type="button" class="btn" data-price="50" data-id="2">
+                優惠價格
+            </button>
+        </div>
+        <div class="item">
+            <h3>紅茶瑪奇朵<br>原價:60元</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxN9FMJSVBjePGQgmKpBvdo6QSluvIdtcEvg&s" width="300px" height="300px" srcset="">
+            <p></p>
+            <p id="price3">
+                60
+            </p>
+            <button type="button" class="btn" data-price="45" data-id="3">
+                優惠價格
+            </button>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // 當按鈕被點擊時，更新價格並隱藏按鈕
+            $('.btn').on('click', function() {
+                var price = $(this).data('price');
+                var id = $(this).data('id');
+                
+                $('#price' + id).text(price).addClass('text-red');
+                $(this).hide(); // 隱藏按鈕
+            });
+        });
+    </script>
+</body>
+</html>
