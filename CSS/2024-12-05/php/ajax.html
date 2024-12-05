@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    最喜歡的一句話
+    <br>
+    <button type="button" id="myBtn">我的價值觀</button>
+
+    <h1 id="myH1">HI,你好</h1>
+    
+
+    <a href="./getData.php"></a>
+
+
+    <!-- ajax ? -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            const myH1 = $('#myH1');
+            const myBtn = $('#myBtn');
+
+            // 2.action
+            myBtn.click(function (e) {
+                // ajax
+                $.ajax({
+                    type: "get",
+                    url: "./getData.php",
+                    // data: "data",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log('response', response);
+                        // console.log('response typeof', typeof (response));
+
+                        // console.log('response.s1', response.s1);
+
+                        myH1.html(`${response.name} <br> ${response.age} <br> ${response.word}`);
+
+                    }
+                });
+
+            });
+
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
