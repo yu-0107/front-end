@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        p {
+            color: black;
+        }
+
+    </style>
+<head>
+  <title>旅遊中心</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">旅遊中心</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page1">景點介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page2">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page2">Link</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner" id="#home">
+    <div class="carousel-item active">
+      <img src="https://sumifuku.net/wp-content/uploads/2023/07/01-8.jpg" alt="tokyo" class="d-block" style="width:100%;height: 70vh;">
+      <div class="carousel-caption">
+        <h3>東京迪士尼</h3>
+        <p>是亞洲第一個迪士尼主題樂園，原是完全複製美國佛州迪士尼建造，經過長年的擴建及改造，而發展出屬於日本的獨特風格。</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://ncapi.bwt.com.tw/image/Present/62ba9efab00fabf06fedf1be/1490/600/0.640234375/324/270" alt="Chicago" class="d-block" style="width:100%;height: 70vh;">
+      <div class="carousel-caption">
+        <h3>東京迪士尼海洋樂園</h3>
+        <p>同樣位於迪士尼度假區的《東京迪士尼海洋樂園》，園內風格以夢幻可愛為主，以「壯大遼闊的地球之海」為主題，其中深受歡迎二大熱門設施為「翱翔：夢幻奇航」及「玩具總動員瘋狂遊戲屋」等著你來體驗。</p>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="https://s3-ap-northeast-1.amazonaws.com/thegate/2020/09/01/14/53/37/tokyo_sky_tree.jpg" alt="New York" class="d-block" style="width:100%;height: 70vh;">
+      <div class="carousel-caption">
+        <h3>東京晴空塔</h3>
+        <p>又稱東京天空樹，塔高共634公尺，獲得金氏世界紀錄認證為「世界第一高塔」，是東京最受矚目的休閒設施與觀光景點之一。</p>
+      </div>  
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="container-fluid mt-3 bg-light-subtle  text-center">
+    <div class="row">
+    <div class="col-4">
+      <h3>景點介紹</h3>
+      <p>『東京迪士尼樂園』</p>
+      <p>是亞洲第一個迪士尼主題樂園，原是完全複製美國佛州迪士尼建造，經過長年的擴建及改造，而發展出屬於日本的獨特風格。
+        園內共有「世界市集」、「探險樂園」、「西部樂園」、「動物天地」、「夢幻樂園」、「卡通城」、「明日樂園」等七大主題園區，
+        近期又新增一個「美女與野獸－城堡奇綠」從夢幻、科技、冒險到驚險恐怖，讓您盡情享受無限驚奇及歡樂！</p>
+    </div>
+    <div class="col-3">
+        <img src="https://d1grca2t3zpuug.cloudfront.net/2022/07/dpshalfp01.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+    </div>
+  </div>  
+</div>
+<div class="container-fluid mt-3 bg-light-subtle  text-center">
+    <div class="row" style="display: flex;margin: auto;">
+        <div class="col-3">
+            <img src="https://wkitty.tw/wp-content/uploads/2017/06/1496254616-b551c5360476ead2e7a69c3db227b998.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+        </div>
+        <div class="col-3">
+      <h3>景點介紹</h3>
+      <p>『東京迪士尼海洋樂園』</p>
+      <p>同樣位於迪士尼度假區的《東京迪士尼海洋樂園》，園內風格以夢幻可愛為主，以「壯大遼闊的地球之海」為主題，
+        其中深受歡迎二大熱門設施為「翱翔：夢幻奇航」及「玩具總動員瘋狂遊戲屋」等著你來體驗，處處充滿驚奇與神祕，
+        也洋溢著人們對海洋的憧憬與尊敬，專屬的吉祥物達菲熊更是紅遍全球、廣受喜愛。</p>
+    </div>
+  </div>  
+</div>
+<div class="container-fluid mt-3 bg-light-subtle  text-center">
+    <div class="row" style="display: flex;margin: auto;">
+        <div class="col-3">
+      <h3>景點介紹</h3>
+      <p>『東京迪士尼海洋樂園』</p>
+      <p>同樣位於迪士尼度假區的《東京迪士尼海洋樂園》，園內風格以夢幻可愛為主，以「壯大遼闊的地球之海」為主題，
+        其中深受歡迎二大熱門設施為「翱翔：夢幻奇航」及「玩具總動員瘋狂遊戲屋」等著你來體驗，處處充滿驚奇與神祕，
+        也洋溢著人們對海洋的憧憬與尊敬，專屬的吉祥物達菲熊更是紅遍全球、廣受喜愛。</p>
+    </div>
+        <div class="col-3">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/thegate/2020/09/01/14/53/37/tokyo_sky_tree.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+        </div>
+  </div>  
+</div>
+
+
+
+
+</body>
+</html>
