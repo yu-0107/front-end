@@ -1,228 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Bootstrap Example</title>
-    <style>
-        legend {
-            text-align: center;
-        }
-
-        span {
-            display: inline-block;
-            width: 7%;
-            text-align: center;
-            background-color: skyblue;
-        }
-
-        input[type="text"] {
-            /* width: 500px; */
-            width: 9%;
-        }
-
-        input[type="number"] {
-            /* width: 500px; */
-            width: 9%;
-        }
-
-        textarea {
-            width: 10%;
-        }
-        img{
-            display: flex;
-            margin: auto;
-        }
-
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>旅遊中心</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
-<body>
-
-    <div class="container mt-3 bg-info-subtle">
-        <h2 style="text-align: center;">Nike 應徵資料表單</h2>
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png" alt="Trulli" width="50"
-        height="50">
-        <form action="/action_page.php">
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">姓名:</label>
-                        </span>
-                        <input type="text" name="myText" id="" placeholder="請輸入姓名">
-                    </p>
-                </div>
+<body class="bg-secondary-subtle">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">旅遊中心</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page0">簡要</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page1">景點介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page2">飯店特色</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page3">每日行程</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page4">注意事項</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page5">關於我們</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">電話:</label>
-                        </span>
-                        <input type="number" name="myNumber" id="" placeholder="請輸入電話">
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">電子郵件:</label>
-                        </span>
-                        <input type="email" name="myEmail" id="" placeholder="請輸入電子郵件">
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">住址:</label>
-                        </span>
-                        <input type="address" name="myAddress" id="" placeholder="請輸入住址">
-                    </p>
-                </div>
-            </div>    
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">性別:</label>
-                        </span>
-                        <input type="gender" name="myGender" id="" placeholder="請輸入性別">
-                    </p>
-                </div>
-            </div>    
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">生日:</label>
-                        </span>
-                        <input type="date" name="myDate" id="">
-                    </p>
-                </div>
-            </div>    
-            <div class="row">
-                <div class="col">
-                    <p>
-                        <span>
-                            <label for="">大頭貼:</label>
-                        </span>
-                        <input type="file" name="myFile" id="" value="">
-                    </p>
-                </div>
-            </div>    
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        應徵項目:
-                    </p>
-                    <p>
-                        <input type="radio" name="myRadio" id="" value="worker">
-                        <label for="">正職</label>
-                        <input type="radio" name="myRadio" id="" value="ph">
-                        <label for="">計時人員</label>
-                    </p>
-                </div>
-            </div>    
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        年資
-                    </p>
-                    <p>
-                        <select name="myselect" id="">
-                            <option value="years">1年以下</option>
-                            <option value="years">1~3年</option>
-                            <option value="years">5年以下</option>
-                            <option value="years">10年以下</option>
-                            <option value="years">20年以下</option>
-                            <option value="years">20年以上</option>
-                        </select>
-                    </p>
-                </div>
-            </div>    
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        年資
-                    </p>
-                    <p>
-                        <select name="myselect" id="">
-                            <option value="years">1年以下</option>
-                            <option value="years">1~3年</option>
-                            <option value="years">5年以下</option>
-                            <option value="years">10年以下</option>
-                            <option value="years">20年以下</option>
-                            <option value="years">20年以上</option>
-                        </select>
-                    </p>
-                </div>
-            </div>    
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        工作經歷(複選):
-                    </p>
-                    <p>
-                        <input type="checkbox" name="habit[]" id="" value="7-11">
-                        <label for="">超商</label>
-                        <input type="checkbox" name="habit[]" id="" value="resterun">
-                        <label for="">餐飲業</label>
-                        <input type="checkbox" name="habit[]" id="" value="ph">
-                        <label for="">計時人員</label>
-                        <input type="checkbox" name="habit[]" id="" value="worker">
-                        <label for="">正職</label>
-                        <input type="checkbox" name="habit[]" id="" value="another">
-                        <label for="">其他___</label>
-                    </p>
-                </div>
-            </div>    
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        通勤方式
-                    </p>
-                    <p>
-                        <!-- <input type="text" name="mySelect" id="" value="goSelect"> -->
-                        <select name="myselect" id="">
-                            <option value="taxi">大眾運輸</option>
-                            <option value="bike">騎車</option>
-                            <option value="car">開車</option>
-                        </select>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="col">
-                    <p>
-                        自我介紹
-                    </p>
-                    <p>
-                        <textarea name="myTextarea" id="" style="width: 400px;height: 10vh;"></textarea>
-                    </p>
-                </div>
+        </div>
+    </nav>
 
 
-            </div>
-            <div class="text-center">
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-                <button type="submit" class=" btn btn-primary">送出</button>
-            </div>
-        </form>
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://sumifuku.net/wp-content/uploads/2023/07/01-8.jpg" alt="tokyo" class="d-block" style="width:100%;height: 70vh;padding-top: 50px;">
+      <div class="carousel-caption text-danger"   id="#">
+        <h3>東京迪士尼</h3>
+        <p>是亞洲第一個迪士尼主題樂園，原是完全複製美國佛州迪士尼建造，經過長年的擴建及改造，而發展出屬於日本的獨特風格。</p>
+      </div>
     </div>
+    <div class="carousel-item">
+      <img src="https://ncapi.bwt.com.tw/image/Present/6537868368627d762f69b303/810/335/0.5692199578355587/0/53" alt="Chicago" class="d-block" style="width:100%;height: 70vh; padding-top: 50px;">
+      <div class="carousel-caption text-danger">
+        <h3>淺草WALK</h3>
+        <p>結合步道橋Sumida River Walk、複合式商業空間「東京水町」。</p>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="https://s3-ap-northeast-1.amazonaws.com/thegate/2020/09/01/14/53/37/tokyo_sky_tree.jpg" alt="New York" class="d-block" style="width:100%;height: 70vh;padding-top: 50px;">
+      <div class="carousel-caption text-danger">
+        <h3>東京晴空塔</h3>
+        <p>又稱東京天空樹，塔高共634公尺，獲得金氏世界紀錄認證為「世界第一高塔」，是東京最受矚目的休閒設施與觀光景點之一。</p>
+      </div>  
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center">
+  <div class="journey_card_title " id="page0"
+  style="background-image: url(https://www.bwt.com.tw/action/TEST/bwt_re/J/img/journey_Frame.png);background-position:center;height:25vh;padding-top: 60px;margin: auto;font-size: 30px;">
+    <p class="text-secondary-emphasis">Attractions</p>
+    <h3 class="text-secondary-emphasis">自由行</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row col-6" style=" margin:auto;">
+    <h3>東京迪士尼+晴空塔+淺草自由行</h3>
+    <h5>探索東京，享受魔法與文化的完美結合！自由行，您可以隨心所欲遊覽東京迪士尼樂園、登上晴空塔俯瞰城市全景，還有在淺草區感受古老的日本風情。</h5>
+    <h4>行程亮點：</h4>
+    <p>✨ 自由安排行程，輕鬆無壓</p>
+    <p>🎢 東京迪士尼魔法之旅</p>
+    <p>🌆 晴空塔觀景台，360度壯麗景色</p>
+    <p>⛩️ 淺草步行，漫遊雷門與仲見世街</p>
+    <p>立即預訂，開啟您的東京夢幻之旅！</p>
+  </div>
+</div>
+
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center">
+  <div class="journey_card_title " id="page1"
+  style="background-image: url(https://www.bwt.com.tw/action/TEST/bwt_re/J/img/journey_Frame.png);background-position:center;height:25vh;padding-top: 60px;margin: auto;font-size: 30px;">
+    <p class="text-secondary-emphasis">Attractions</p>
+    <h3 class="text-secondary-emphasis">景點介紹</h3>
+  </div>
+</div>
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+  <div class="row">
+    <div class="col-4" style="margin: left;padding-left: 20px;padding-top: 20px;">
+      <p>『東京迪士尼樂園』</p>
+      <p>是亞洲第一個迪士尼主題樂園，原是完全複製美國佛州迪士尼建造，經過長年的擴建及改造，而發展出屬於日本的獨特風格。
+        園內共有「世界市集」、「探險樂園」、「西部樂園」、「動物天地」、「夢幻樂園」、「卡通城」、「明日樂園」等七大主題園區，
+        近期又新增一個「美女與野獸－城堡奇綠」從夢幻、科技、冒險到驚險恐怖，讓您盡情享受無限驚奇及歡樂！</p>
+    </div>
+    <div class="col-1">
+        <img src="https://d1grca2t3zpuug.cloudfront.net/2022/07/dpshalfp01.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+    </div>
+  </div>  
+</div>
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+    <div class="row" style="display: flex;margin: auto;">
+        <div class="col-4">
+            <img src="https://wkitty.tw/wp-content/uploads/2017/06/1496254616-b551c5360476ead2e7a69c3db227b998.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+        </div>
+        <div class="col-4" style="padding-top: 30px;">
+      <p>『東京迪士尼海洋樂園』</p>
+      <p>同樣位於迪士尼度假區的《東京迪士尼海洋樂園》，園內風格以夢幻可愛為主，以「壯大遼闊的地球之海」為主題，
+        其中深受歡迎二大熱門設施為「翱翔：夢幻奇航」及「玩具總動員瘋狂遊戲屋」等著你來體驗，處處充滿驚奇與神祕，
+        也洋溢著人們對海洋的憧憬與尊敬，專屬的吉祥物達菲熊更是紅遍全球、廣受喜愛。</p>
+    </div>
+  </div>  
+</div>
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+    <div class="row">
+        <div class="col-4" style="padding-top: 30px;">
+      <p>『東京代表地標－晴空塔』</p>
+      <p>東京晴空街道，這個東京名店、現正熱播日劇周邊商品、流行時裝、動漫週邊商品、
+        Calbee薯片等日本知名店家進駐的塔下商場，想在東京一次買完所有伴手禮，嘗過所有美食，
+        又沒有太多時間的，來一趟晴空塔可說是最佳選擇。</p>
+    </div>
+        <div class="col-3">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/thegate/2020/09/01/14/53/37/tokyo_sky_tree.jpg" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+        </div>
+    </div>  
+  </div>
+</div>
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+  <div class="row" style="display: flex;margin: auto;">
+      <div class="col-4">
+          <img src="https://ncapi.bwt.com.tw/image/Present/6537868368627d762f69b303/810/335/0.5692199578355587/0/53" alt="tokyo" class="d-block" style="width:350px;height: 250px;">
+      </div>
+      <div class="col-3" style="padding-top: 30px;">
+    <p>淺草WALK』</p>
+    <p>淺草WALK帶您走進東京最具歷史與文化底蘊的區域，這裡融合了古老的傳統與現代都市風貌，
+      是體驗東京獨特魅力的理想場所。從悠久的寺廟到充滿活力的街道，您將發現無數的美景和故事，
+      彷彿穿越時光隧道，感受日本的文化精髓。</p>
+  </div>
+</div>  
 </div>
 
 
-    
 
-    
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center">
+    <div class="journey_card_title " id="page2"
+    style="background-image: url(https://www.bwt.com.tw/action/TEST/bwt_re/J/img/journey_Frame.png);background-position:center;height:25vh;padding-top: 60px;margin: auto;font-size: 30px;">
+      <p class="text-secondary-emphasis">Attractions</p>
+      <h3 class="text-secondary-emphasis">飯店特色</h3>
+    </div>
+  <div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+    <div class="row">
+      <div class="col-4" style="margin: left;padding-left: 20px;">
+        <h3 class="text-secondary">『湯樂城國際渡假酒店』</h3>
+        <h5 class="text-warning-emphasis">複合式的國際渡假飯店</h5>
+        <p>湯樂城國際渡假酒店位於日本成田，酒店內設有室內游泳池，供您享受愜意的游泳經驗。無論是想要放鬆身心，
+        還是進行有氧運動，這個室內游泳池都能滿足您的需求。此外，還設有一間現代化的健身中心。
+        這個健身中心配備了各種專業設備，讓您能夠進行全身性的運動鍛煉。如果您喜歡網球或乒乓球，酒店的網球場和乒乓球場絕對會讓您愛不釋手。</p>
+        
+      </div>
+      <div class="col-1">
+          <img src="https://ncapi.bwt.com.tw/image/Present/6746d2a45533bac4a08185c9/353/380/0.2783882783882784/108/0" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+      </div>
+    </div>  
+  </div>
+  <div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+      <div class="row" style="display: flex;margin: auto;">
+          <div class="col-4">
+              <img src="https://ncapi.bwt.com.tw/image/Present/674003b4125f427d6ec83ac8/353/380/0.2486910994764398/108/0" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+          </div>
+          <div class="col-4" style="padding-right: 65px;">
+        <h3 class="text-secondary">『湯樂城複合式溫泉』</h3>
+        <h5 class="text-warning-emphasis">隸屬於湯樂城國際度假酒店</h5>
+        <p>日本的溫泉設施，究竟能多豪華？距離成田機場不遠的富里市，有一間名為「東京湯樂城」的大型溫泉設施，
+          耗資24億日幣打造，堪稱是溫泉的主題樂園。以明治時代的全盛時期為構想，裡面有餐廳、商店、神社…把明治的華美街景全都複製過來，
+          規模之大，奢華至極。還有話題性十足的華麗聲光水舞秀以及天花板上的七彩投影。</p>
+      </div>
+    </div>  
+  </div>
+  <div class="container-fluid mt-3 bg-secondary-subtle  text-center" style="padding-left: 500px;">
+      <div class="row">
+          <div class="col-4">
+            <h3 class="text-secondary">『日本東京湯樂城餐廳』</h3>
+            <h5 class="text-warning-emphasis">富里酒廠、七榮屋料理</h5>
+            <p>「東京湯樂城」從外觀到大廳，皆已華麗得讓人嘖嘖稱奇，不過真正的重頭戲才正要展開。以明治的華美街景為基調，食堂、神社、商店、舞台、休憩空間組成的樂天地，為了營造奇幻異世界的氣氛，連天花板都導入七彩投影，仿照了天空的日換星移，顛覆了我們對溫泉設施的想像。同時也非常好奇，究竟這個耗資24億日幣打造的溫泉主題樂園，還會給人帶來什麼樣的驚喜。</p>
+      </div>
+          <div class="col-3">
+              <img src="https://ncapi.bwt.com.tw/image/Present/6746d2b15533bac4a08185d3/353/380/0.19/108/0" alt="tokyo" class="d-block" style="width:300px;height: 250px;">
+          </div>
+      </div>  
+    </div>
+  </div>
+  
+</div>   
+
+<div class="container-fluid mt-3 bg-secondary-subtle  text-center">
+  <div class="journey_card_title " id="page3"
+  style="height:20vh;padding-top: 30px;margin:auto; font-size:30px;">
+  <img src="https://www.bwt.com.tw/Content/Img/Tour/Product/daily.gif" alt="">
+    <h3 class="text-danger">每天行程</h3>
+  </div>
+  <div class="container-fluid mt-3 bg-secondary-subtle" style="padding-left: 400px;">
+    <div class="row">
+      <div class="title">
+        <div class="diary_day_warp col-4 text-info" style="border: #9c7546 solid 1px; justify-content: center;display: flex;align-items: 
+                                              flex-end;border-radius: 7px;padding: 10px 16px 10px 16px;width: 250px; height: 50px;font-size: 20px;">
+          <div class="diary_day col-4">
+          第一天
+          </div>
+          <div class="diary_date">
+          "2025.01.07"
+          </div>
+      </div>  
+        <div class="row" style="padding-right: 900px;">
+          <p class="text-warning-emphasis">桃園機場~成田國際機場→安排接駁車前往成田飯店 </p>          
+          <div class="diary_content col-9" style="text-align: left;padding-top: 20px;">
+            <h5 class="text-secondary">你好東京</h5>
+            <p>東京日本的首都，更是日本政治、經濟、文化的中心。在全球各大城市裡，東京都應該算是最適合自由行的精彩城市。
+              集合了最新的流行、各國的特色美食、刺激的主題樂園以及江戶氣息的傳統文化，多采多姿的時尚都會令人百玩不厭！</p>
+            </div>
+            <div class="col-3">
+              <img src="https://ncapi.bwt.com.tw/image/Present/621617a35678dc66fa4b14d7/785/350/0.19169719169719168/0/86" 
+              alt="tokyo" class="d-block" style="width:400px;height: 250px;padding-top: 20px;">
+            </div>
+        </div>
+      </div>
+      <div class="diary_day_warp col-4 text-info" style="border: #9c7546 solid 1px; justify-content: center;display: flex;align-items: 
+                                              flex-end;border-radius: 7px;padding: 10px 16px 10px 16px;width: 250px; height: 50px;font-size: 20px;">
+          <div class="diary_day col-4">
+          第二天
+          </div>
+          <div class="diary_date">
+          "2025.01.08"
+          </div>
+      </div>  
+      <div class="row" style="padding-right: 700px;">
+        <p class="text-warning-emphasis">飯店→淺草寺→淺草WALK→東京晴空塔(不上塔)~晴空塔購物商城→免稅店→哆啦A夢未來百貨公司~台場DIVERCITY TOKYO PLAZA購物廣場→飯店 </p>          
+          <div class="col-5" style="padding-top: 20px;">
+            <img src="https://ncapi.bwt.com.tw/image/Present/621617835678dc66fa4b14bd/350/234/0.13636363636363638/63/0" alt="tokyo" class="d-block" style="width:350px;height: 250px;">
+          </div>
+            <div class="diary_content col-7" style="text-align: left;padding-top: 25px;padding-left: 140px;">
+              <h5 class="text-secondary">東京代表地標一晴空塔</h5>
+              <p>東京日本的首都，更是日本政治、經濟、文化的中心。在全球各大城市裡，東京都應該算是最適合自由行的精彩城市。
+                集合了最新的流行、各國的特色美食、刺激的主題樂園以及江戶氣息的傳統文化，多采多姿的時尚都會令人百玩不厭！</p>
+              </div>
+      </div>
+      <div class="row">
+        <div class="diary_content col-3" style="text-align: left;padding-top: 40px;">    
+          <h5 class="text-secondary">淺草WALK</h5>
+          <p>結合步道橋Sumida River Walk、複合式商業空間「東京水町」，2020年開幕啟用後，提供了來往東京晴空塔地區、
+            淺草區最短的步行路線，可以欣賞沿途的水岸景色。步道全長約160公尺，是日本國內罕見的鐵路橋邊步道。</p>
+          </div>
+          <div class="col-3" style="padding-top: 20px;">
+            <img src="https://ncapi.bwt.com.tw/image/Present/6537868368627d762f69b303/810/335/0.5692199578355587/0/53" alt="tokyo" class="d-block" style="width:400px;height: 250px;">
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-3" style="padding-top: 20px;">
+          <img src="https://ncapi.bwt.com.tw/image/Present/60d1672ced0e9b3f12c9bca9/810/335/0.20833333333333334/0/102" alt="tokyo" class="d-block" style="width:300px;height: 200px;padding-bottom: 20px;">
+        </div>
+        <div class="diary_content col-4" style="text-align: left;padding-top: 40px;">    
+          <h5 class="text-secondary">雷門淺草寺</h5>
+          <p>《淺草寺》位於東京淺草二丁目，是東京都內歷史最悠久的寺院。江戶時代後半，境內「仲見世」地區開始出現各式商店及賣藝人集中於此，
+            成為當時庶民的娛樂中心。至今淺草一帶依然是平民的娛樂場所，淺草寺更是此處的地標。</p>
+          </div>
+      </div>
+       
+      <div class="diary_day_warp col-4 text-info" style="border: #9c7546 solid 1px; justify-content: center;display: flex;align-items: 
+                                              flex-end;border-radius: 7px;padding: 10px 16px 10px 16px;width: 250px; height: 50px;font-size: 20px;">
+          <div class="diary_day col-4" style="padding-top: 30px;">
+          第三天
+          </div>
+          <div class="diary_date">
+          "2025.01.09"
+          </div>
+      </div>
+      <div class="row" style="padding-top: 20px;padding-right: 230px;">
+        <h5 class="text-warning-emphasis">東京迪士尼樂園/迪士尼海洋樂園，與米奇、米妮、唐老鴨、維尼熊一同遨遊探險樂園或前往哈利波特影城進入魔法世界</h5>          
+          <div class="col-5" style="padding-top: 20px;">
+            <img src="https://ncapi.bwt.com.tw/image/Present/60d1666eed0e9b3f12c9ba2e/810/360/0.9/0/90" alt="tokyo" class="d-block" style="width:400px;height: 250px;">
+          </div>
+            <div class="diary_content col-3" style="text-align: left;padding-top: 50px;">
+              <h6 class="text-secondary">迪士尼樂園</h6>
+              <p>全亞洲第一個迪士尼樂園，和全世界其他地區一樣，都有一座跟童話故事中一模一樣的城堡，不一樣的是，大部分都是睡美人城堡，只有佛羅里達的神奇王國和東京迪士尼樂園是「灰姑娘城堡」，奇幻的童話之旅，即將展開。</p>
+              </div>
+      </div>
+      <div class="row">
+        <div class="diary_content col-3" style="text-align: left;padding-top: 60px;">    
+          <h5 class="text-secondary">迪士尼海洋</h5>
+          <p>位於迪士尼度假區的《東京迪士尼海洋樂園》，是全世界最受歡迎的主題樂園之一。園內風格以夢幻可愛為主，
+            以「壯大遼闊的地球之海」為主題，不但處處充滿驚奇與神祕，也洋溢著對海洋的憧憬與尊敬，吉祥物達菲熊更是紅遍全球。</p>
+          </div>
+          <div class="col-3" style="padding-top: 20px;">
+            <img src="https://ncapi.bwt.com.tw/image/Present/621615bf5678dc66fa4b1347/810/360/0.16635859519408502/0/90" alt="tokyo" class="d-block" style="width:400px;height: 250px;">
+          </div>
+      </div>
+
+      </div>
+      <div class="diary_day_warp col-4 text-info" style="border: #9c7546 solid 1px; justify-content: center;display: flex;align-items: 
+                                              flex-end;border-radius: 7px;padding: 10px 16px 10px 16px;width: 250px; height: 50px;font-size: 20px;">
+          <div class="diary_day col-4" style="padding-top: 30px;">
+          第四天
+          </div>
+          <div class="diary_date">
+          "2025.01.10"
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-4" style="padding-top: 20px;">
+            <img src="https://ncapi.bwt.com.tw/image/Present/60d16722ed0e9b3f12c9bc82/785/350/0.7726377952755905/0/66" alt="tokyo" class="d-block" style="width:400px;height: 280px;padding-top: 20px;">
+          </div>
+            <div class="diary_content col-3" style="text-align: left;padding-top: 70px;">
+              <h5 class="text-secondary">東京 → 飯店 → 成田機場/桃園機場</h5>          
+              <h6 class="text-warning-emphasis">飯店</h6>
+              <p>旅客可以自費搭電車或地鐵前往東京觀光點或有名鬧區觀光，逛街購物，由飯店出發專車前往機場，在導遊安排辦理登機手續後，帶著依依不捨的心情，返回溫暖的家，為這次美好的旅程，畫下休止符！</p>
+              </div>
+      </div>
+      
+
+      </div>
+
+
+  </div>
+  <div class="container-fluid mt-3 bg-secondary-subtle text-center">
+    <div class="journey_card_title " id="page4"
+    style="height:20vh;padding-top: 30px;margin:auto; font-size:30px;">
+    <img src="https://www.bwt.com.tw/Content/Img/Tour/Product/note.gif" alt="" style="">
+      <h3 class="text-danger">注意事項</h3>
+    </div>
+    </div>
+    <div class="container-fluid mt-3 bg-secondary-subtle" style="padding-left: 400px;">
+      <div class="row">
+        <div class="title">
+          <div class="diary_day_warp ">
+            <div class="diary_day col-8">
+            <h2 class="text-info">日本消費稅新制及退稅方式</h2>
+            <hr>
+            <ol>
+              <li>一般物品或消耗品(食品、煙酒、藥妝)，只要當天同一店家內，未稅金額達5000日元以上至50萬日元以下，即可辦理退稅。</li>
+              <li>可申請退稅的商店，會標示「Japan．Tax-Free Shop」，若無標示，即可能無法退稅。</li>
+              <li>退稅時，需簽寫切結書，保證會將退稅物品於30日內攜出日本。</li>
+              <li>已辦理退稅的消耗品(食品、煙酒、藥妝)，店家會特別包裝已辦理退稅物品。因此，不可在日本境內拆封，若已拆封，視同已消費使用，將被課徵消費稅。</li>
+            </ol>
+            </div>
+            <div class="diary_date col-8">
+            <h2 class="text-info">退稅方法</h2>
+            <hr>
+            <ol>
+              <li>購物當天，持收據及護照至店內指定櫃檯辦理退稅。</li>
+              <li>辦理退稅時，店家會寫一份購物記錄，以供退稅者簽名。簽名後，店家會再將購物記錄黏貼至護照上(不可撕下)，並給予退稅現金。</li>
+              <li>出境時，需向稅關單位出示護照及購買物品以供查驗。若未攜帶退稅物品供查驗，則會被視為已消費使用，會被加徵消費稅。 更詳細的退稅規定請參考：<a href="https://shops.naps-jp.com/tax-free-tw/">日本免稅 Japan. Tax free Shop 官網</a></li>
+            </ol>
+            </div>
+        </div>  
+          <div class="row">
+            <div class="diary_content col-8" style="text-align: left;padding-top: 20px;">
+              <h2 class="text-info">入境日本不能攜帶的物品</h2>
+              <hr>
+              <ol>
+                <li>違禁品：如大麻、鴉片、槍彈、刀械、假鈔等....</li>
+                <li>以來自偶蹄類動物（牛、豬、山羊、綿羊、鹿等）、馬、家禽、犬、兔、蜜蜂之以下物品為對象：只要是禁止或停止輸入的物品（肉品、內臟），或是未有檢查證明書的物品，即使裝在真空包裡，也禁止攜入。</li>
+                <li>華盛頓公約內之保護動物的製品或加工品等等....</li>
+                <li>根據日本家畜傳染病預防法，在未接受進口檢查的情況下攜帶畜牧產品進入日本境內，將被判處3年以下的徒刑或100萬日圓以下的罰款。</li>
+              </ol>
+              </div>
+           </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-3 bg-black text-center text-white">
+    <div class="journey_card_title " id="page5"
+    style="height:20vh;padding-top: 30px;margin:auto; font-size:30px;">
+    <img src="https://cdn.pixabay.com/animation/2023/04/29/03/28/03-28-02-784_512.gif" alt="" style="width: 50px;height: 50px;">
+      <h2>關於我們</h2>
+    </div>
+    <div class="row text-left">
+      <h3>旅遊中心</h3>
+      <h3>地址:243新北市泰山區貴子里致遠新村55之1號</h3>
+      <h3>電話：02-2901-8274</h3>
+      <h3>傳真：02-2908-4773</h3>
+      <h3>客服信箱:123321@gamil.com</h3>
+    </div>
+    </div>
+
+  
+   
+
 </body>
-
 </html>
+
+<!-- css code url -->
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css -->

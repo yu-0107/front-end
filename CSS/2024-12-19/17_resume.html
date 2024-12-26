@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <style>
+        legend {
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            width: 7%;
+            text-align: center;
+            background-color: skyblue;
+        }
+
+        input[type="text"] {
+            /* width: 500px; */
+            width: 9%;
+        }
+
+        input[type="number"] {
+            /* width: 500px; */
+            width: 9%;
+        }
+
+        textarea {
+            width: 10%;
+        }
+        img{
+            display: flex;
+            margin: auto;
+        }
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-3 bg-info-subtle">
+        <h2 style="text-align: center;">Nike 應徵資料表單</h2>
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png" alt="Trulli" width="50"
+        height="50">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">姓名:</label>
+                        </span>
+                        <input type="text" name="myText" id="" placeholder="請輸入姓名">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">電話:</label>
+                        </span>
+                        <input type="number" name="myNumber" id="" placeholder="請輸入電話">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">電子郵件:</label>
+                        </span>
+                        <input type="email" name="myEmail" id="" placeholder="請輸入電子郵件">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">住址:</label>
+                        </span>
+                        <input type="address" name="myAddress" id="" placeholder="請輸入住址">
+                    </p>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">性別:</label>
+                        </span>
+                        <input type="gender" name="myGender" id="" placeholder="請輸入性別">
+                    </p>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">生日:</label>
+                        </span>
+                        <input type="date" name="myDate" id="">
+                    </p>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>
+                            <label for="">大頭貼:</label>
+                        </span>
+                        <input type="file" name="myFile" id="" value="">
+                    </p>
+                </div>
+            </div>    
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        應徵項目:
+                    </p>
+                    <p>
+                        <input type="radio" name="myRadio" id="" value="worker">
+                        <label for="">正職</label>
+                        <input type="radio" name="myRadio" id="" value="ph">
+                        <label for="">計時人員</label>
+                    </p>
+                </div>
+            </div>    
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        年資
+                    </p>
+                    <p>
+                        <select name="myselect" id="">
+                            <option value="years">1年以下</option>
+                            <option value="years">1~3年</option>
+                            <option value="years">5年以下</option>
+                            <option value="years">10年以下</option>
+                            <option value="years">20年以下</option>
+                            <option value="years">20年以上</option>
+                        </select>
+                    </p>
+                </div>
+            </div>    
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        年資
+                    </p>
+                    <p>
+                        <select name="myselect" id="">
+                            <option value="years">1年以下</option>
+                            <option value="years">1~3年</option>
+                            <option value="years">5年以下</option>
+                            <option value="years">10年以下</option>
+                            <option value="years">20年以下</option>
+                            <option value="years">20年以上</option>
+                        </select>
+                    </p>
+                </div>
+            </div>    
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        工作經歷(複選):
+                    </p>
+                    <p>
+                        <input type="checkbox" name="habit[]" id="" value="7-11">
+                        <label for="">超商</label>
+                        <input type="checkbox" name="habit[]" id="" value="resterun">
+                        <label for="">餐飲業</label>
+                        <input type="checkbox" name="habit[]" id="" value="ph">
+                        <label for="">計時人員</label>
+                        <input type="checkbox" name="habit[]" id="" value="worker">
+                        <label for="">正職</label>
+                        <input type="checkbox" name="habit[]" id="" value="another">
+                        <label for="">其他___</label>
+                    </p>
+                </div>
+            </div>    
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        通勤方式
+                    </p>
+                    <p>
+                        <!-- <input type="text" name="mySelect" id="" value="goSelect"> -->
+                        <select name="myselect" id="">
+                            <option value="taxi">大眾運輸</option>
+                            <option value="bike">騎車</option>
+                            <option value="car">開車</option>
+                        </select>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <p>
+                        自我介紹
+                    </p>
+                    <p>
+                        <textarea name="myTextarea" id="" style="width: 400px;height: 10vh;"></textarea>
+                    </p>
+                </div>
+
+
+            </div>
+            <div class="text-center">
+
+                <button type="submit" class=" btn btn-primary">送出</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    
+
+    
+</body>
+
+</html>
