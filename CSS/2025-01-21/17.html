@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投籃小遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            position: relative;
+            text-align: center;
+        }
+
+        canvas {
+            background-color: #87CEEB;
+            border: 2px solid black;
+        }
+
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: black;
+        }
+
+        #time {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: black;
+        }
+
+        #powerBar {
+            position: absolute;
+            bottom: 15px; /* 蓄力條設置在距離畫布底部 15px */
+            width: 200px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #powerFill {
+            width: 0%;
+            height: 100%;
+            background-color: #FF6347;
+        }
+
+        #resetButton {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #FF6347;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+        }
+
+        #resetButton:hover {
+            background-color: #ff4500;
+        }
+
+        #hintText {
+            position: absolute;
+            bottom: 40px; /* 設定提示文字的高度 */
+            width: 100%;
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="score">分數: 0</div>
+        <div id="time">剩餘時間: 60</div>
+        <div id="powerBar">
+            <div id="powerFill"></div>
+        </div>
+        <button id="resetButton">重置</button> <!-- 更改為 "重置" -->
+        <div id="hintText">按住空白鍵蓄力投籃</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 500;
+        canvas.height = 400;
+
+        let score = 0;
+        let power = 0; // 投籃的力量
+        let ball = { x: 50, y: canvas.height - 50, radius: 15, dx: 0, dy: 0, gravity: 0.1 };
+        let hoop = { x: canvas.width - 100, y: 100, width: 50, height: 10 }; // 簡單籃框
+        let isShooting = false;
+        let powerIncreasing = false; // 用來控制是否正在增加力道
+        let timeLeft = 60; // 遊戲剩餘時間
+        let gameInterval; // 用來控制遊戲的計時
+        let gameOver = false; // 控制遊戲是否結束
+
+        // 開始計時
+        function startTimer() {
+            if (gameInterval) {
+                clearInterval(gameInterval); // 清除已有的計時器
+            }
+
+            gameInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    document.getElementById("time").textContent = "剩餘時間: " + timeLeft;
+                } else {
+                    clearInterval(gameInterval);
+                    if (!gameOver) {
+                        alert("時間到！遊戲結束，您的分數是：" + score);
+                        gameOver = true;
+                        document.getElementById("resetButton").style.display = "block"; // 顯示重置按鈕
+                    }
+                }
+            }, 1000); // 每秒更新一次
+        }
+
+        // 監聽鍵盤事件
+        document.addEventListener("keydown", function (e) {
+            if (e.key === " " && !isShooting && !gameOver && ball.dy === 0) { // 空白鍵開始增加力道
+                powerIncreasing = true;
+            }
+        });
+
+        document.addEventListener("keyup", function (e) {
+            if (e.key === " " && !isShooting && !gameOver && ball.dy === 0) { // 釋放空白鍵開始投籃
+                isShooting = true;
+                // 這裡將力道縮小，讓球飛得不那麼遠
+                let shootingPower = power * 0.25; // 調整為更小的力道
+                ball.dx = shootingPower * Math.cos(Math.PI / 4); // 投籃角度和力道
+                ball.dy = -shootingPower * Math.sin(Math.PI / 4); // 投籃角度和力道
+
+                // 發射後立即重置力道和蓄力條
+                resetPower();
+            }
+        });
+
+        // 簡單的籃框設計（無籃網）
+        function drawHoop() {
+            // 籃框
+            ctx.fillStyle = "#8B4513"; // 使用棕色來畫籃框
+            ctx.fillRect(hoop.x, hoop.y, hoop.width, hoop.height); // 簡單的矩形籃框
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "#FF6347";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawScore() {
+            document.getElementById("score").textContent = "分數: " + score;
+        }
+
+        function drawPowerBar() {
+            // 計算填充的寬度
+            const powerFill = document.getElementById("powerFill");
+            powerFill.style.width = power + "%";
+        }
+
+        function updateBallPosition() {
+            if (isShooting) {
+                ball.x += ball.dx;
+                ball.y += ball.dy;
+                ball.dy += ball.gravity; // 添加重力效果
+
+                // 當球碰到地面或邊界反彈
+                if (ball.y + ball.radius > canvas.height) {
+                    ball.y = canvas.height - ball.radius;
+                    ball.dy = -ball.dy * 0.7; // 反彈效果
+                }
+
+                // 球如果進了籃框
+                if (
+                    ball.x + ball.radius > hoop.x && 
+                    ball.x - ball.radius < hoop.x + hoop.width && 
+                    ball.y - ball.radius < hoop.y + hoop.height && 
+                    ball.y + ball.radius > hoop.y
+                ) {
+                    score++;
+                    resetBall(); // 重置球位置
+                }
+
+                // 若球出界，則重置球
+                if (ball.x > canvas.width || ball.y > canvas.height) {
+                    resetBall(); // 重置球位置
+                }
+            }
+        }
+
+        function resetBall() {
+            // 重置籃球的位置和速度
+            ball.x = 50;
+            ball.y = canvas.height - 50;
+            ball.dx = 0;
+            ball.dy = 0;
+            isShooting = false;
+
+            // 重置蓄力條
+            resetPower();
+        }
+
+        function resetPower() {
+            power = 0; // 重置力道
+            document.getElementById("powerFill").style.width = "0%"; // 重置蓄力條
+            powerIncreasing = false; // 停止增加力道
+        }
+
+        function increasePower() {
+            if (powerIncreasing) { // 無限制力道最大值
+                power += 0.5; // 增加力道
+            }
+        }
+
+        function resetGame() {
+            // 重置分數、時間和遊戲狀態
+            score = 0;
+            timeLeft = 60;
+            document.getElementById("time").textContent = "剩餘時間: " + timeLeft;
+            document.getElementById("score").textContent = "分數: 0";
+            gameOver = false;
+            resetBall();
+            resetPower();
+            document.getElementById("resetButton").style.display = "none"; // 隱藏重置按鈕
+            startTimer(); // 重新開始計時
+        }
+
+        // 按下重置按鈕時重置遊戲
+        document.getElementById("resetButton").addEventListener("click", resetGame);
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawHoop();
+            drawBall();
+            drawScore();
+            drawPowerBar();
+            updateBallPosition();
+            increasePower(); // 持續增加力道
+
+            requestAnimationFrame(animate); // 呼叫下一幀動畫
+        }
+
+        startTimer(); // 遊戲開始後啟動計時器
+        animate();
+    </script>
+</body>
+</html>
