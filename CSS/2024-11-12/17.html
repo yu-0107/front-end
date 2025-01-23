@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            height: 90vh;
+            background-color: lightblue;
+            min-width: 10px;
+        }
+
+        .item {
+            display: flex;
+            width: 95%;
+            height: 20vh;
+            background-color: lightblue;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .item>.box {
+            width: 20%;
+            height: 18vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        hr {
+            border: 2px solid #000;
+        }
+
+        p1 {
+            font-size: 30px;
+            margin-left: 1150px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="box">
+                <img src="https://bigbro.tw/wp-content/uploads/2021/05/20210513185042_55.jpeg" width="150px" alt="">
+            </div>
+            <div class="box">
+                四季春珍波椰: $ <span class="price">50</span>
+            </div>
+            <div class="box">
+                <p>
+                    <label for=""></label>
+                    <input class="quantity" type="number" value="6" min="0">杯
+                </p>
+            </div>
+            <div class="box">
+                $ <span class="total">300</span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="box">
+                <img src="https://blog-cdn.roo.cash/blog/wp-content/uploads/2024/06/8-%E5%86%B0%E7%B6%A0.jpg"
+                    width="150px" alt="">
+            </div>
+            <div class="box">
+                8冰綠: $ <span class="price">60</span>
+            </div>
+            <div class="box">
+                <p>
+                    <label for=""></label>
+                    <input class="quantity" type="number" value="2" min="0">杯
+                </p>
+            </div>
+            <div class="box">
+                $ <span class="total">120</span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="box">
+                <img src="https://blog-cdn.roo.cash/blog/wp-content/uploads/2024/06/%E6%B3%A2%E9%9C%B8%E5%A5%B6%E8%8C%B6.jpg"
+                    width="150px" alt="">
+            </div>
+            <div class="box">
+                波霸奶茶: $ <span class="price">60</span>
+            </div>
+            <div class="box">
+                <p>
+                    <label for=""></label>
+                    <input class="quantity" type="number" value="3" min="0">杯
+                </p>
+            </div>
+            <div class="box">
+                $ <span class="total">180</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p1>總計&nbsp;<span id="totalAmount">NT $600 元</span></p1>
+
+    <script>
+        // Function to update total price when quantity changes
+        function updateTotal() {
+            let total = 0;
+            // Get all items
+            const items = document.querySelectorAll('.item');
+
+            items.forEach(item => {
+                const price = parseFloat(item.querySelector('.price').textContent);
+                const quantity = parseInt(item.querySelector('.quantity').value);
+                const totalPrice = price * quantity;
+
+                // Update individual total
+                item.querySelector('.total').textContent = totalPrice.toFixed(2);
+                total += totalPrice;
+            });
+
+            // Update the total amount
+            document.getElementById('totalAmount').textContent = `NT $${total.toFixed(2)} 元`;
+        }
+
+        // Event listener for quantity input change
+        document.querySelectorAll('.quantity').forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+
+        // Initialize total calculation on page load
+        updateTotal();
+    </script>
+</body>
+
+</html>
