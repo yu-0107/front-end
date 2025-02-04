@@ -1,0 +1,89 @@
+{
+    "fields": [
+        {
+            "id": "epavec10_1",
+            "type": "text",
+            "info": {
+                "label": "空氣品質區"
+            }
+        },
+        {
+            "id": "shape_area",
+            "type": "text",
+            "info": {
+                "label": "面積"
+            }
+        },
+        {
+            "id": "shape_len",
+            "type": "text",
+            "info": {
+                "label": "邊界線"
+            }
+        },
+        {
+            "id": "references",
+            "type": "text",
+            "info": {
+                "label": "參考資料"
+            }
+        }
+    ],
+    "resource_id": "e182d8b1-936e-416b-84be-8dfd0814cf5b",
+    "__extras": {
+        "api_key": "9e565f9a-84dd-4e79-9097-d403cae1ea75"
+    },
+    "include_total": true,
+    "total": "7",
+    "resource_format": "object",
+    "limit": "1000",
+    "offset": "0",
+    "_links": {
+        "start": "\/api\/v2\/gisepa_p_17?api_key=9e565f9a-84dd-4e79-9097-d403cae1ea75&limit=1000&format=JSON&sort=ImportDate desc",
+        "next": "\/api\/v2\/gisepa_p_17?api_key=9e565f9a-84dd-4e79-9097-d403cae1ea75&limit=1000&format=JSON&sort=ImportDate desc&offset=1000"
+    },
+    "records": [
+        {
+            "epavec10_1": "花東空品區",
+            "shape_area": "8179557656.96000000000",
+            "shape_len": "860271.04664400000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "宜蘭空品區",
+            "shape_area": "2190808109.19000000000",
+            "shape_len": "356983.39785800000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "高屏空品區",
+            "shape_area": "5755899802.36000000000",
+            "shape_len": "801000.41599900000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "雲嘉南空品區",
+            "shape_area": "5592203260.30000000000",
+            "shape_len": "551622.36514200000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "中部空品區",
+            "shape_area": "7437271233.39000000000",
+            "shape_len": "632655.67254600000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "竹苗空品區",
+            "shape_area": "3338499969.49000000000",
+            "shape_len": "327432.21374000000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        },
+        {
+            "epavec10_1": "北部空品區",
+            "shape_area": "3665527860.05000000000",
+            "shape_len": "517531.29915200000",
+            "references": "https:\/\/gis.moenv.gov.tw\/mapfile\/shp\/空氣品質區範圍圖_TWD97-121.zip"
+        }
+    ]
+}
