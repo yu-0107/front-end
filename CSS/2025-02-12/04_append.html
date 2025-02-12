@@ -11,11 +11,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        * {
+        *{
             box-sizing: border-box;
         }
-
-        .box {
+        .box{
             border: 1px solid black;
             padding: 50px;
         }
@@ -40,11 +39,9 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <!-- before -->
                 <div class="box">
                     <p>origin Lorem ipsum dolor sit amet.</p>
                 </div>
-                <!-- after -->
             </div>
         </div>
     </div>
@@ -63,40 +60,16 @@
 
         $(document).ready(function () {
             // 1.bind
-            const appendBtn = $('#appendBtn');
-            const prependBtn = $('#prependBtn');
-            const afterBtn = $('#afterBtn');
-            const beforeBtn = $('#beforeBtn');
-            const box = $('.box');
-            let count = 0;
+            const myBtn = $('#myBtn');
 
             // 2.action
-            appendBtn.click(function (e) {
-                // console.log('appendBtn', appendBtn);
-                count++;
-                let tmpText = `<p>第${count}次 Lorem ipsum dolor sit amet.</p>`;
-                box.append(tmpText);
-            });
-
-            prependBtn.click(function (e) {
-                // console.log('appendBtn', appendBtn);
-                count++;
-                let tmpText = `<p>第${count}次 Lorem ipsum dolor sit amet.</p>`;
-                box.prepend(tmpText);
-            });
-
-            afterBtn.click(function (e) {
-                // console.log('appendBtn', appendBtn);
-                count++;
-                let tmpText = `<p>第${count}次 Lorem ipsum dolor sit amet.</p>`;
-                box.after(tmpText);
-            });
-
-            beforeBtn.click(function (e) {
-                // console.log('appendBtn', appendBtn);
-                count++;
-                let tmpText = `<p>第${count}次 Lorem ipsum dolor sit amet.</p>`;
-                box.before(tmpText);
+            myBtn.click(function (e) {
+                // alert('origin alert');
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                });
             });
 
 
